@@ -25,9 +25,25 @@ const SubTitulo = styled.h3`
     margin-bottom: 40px;
 `
 
+const Resultado = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    p {
+        width: 400px;
+    }
+    img {
+        width: 100px;
+    }
+    &:hover {
+        border: 1px solid white;
+    }
+`
+
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([])
-    console.log(livrosPesquisados)
     return (
         <PesquisaContainer>
             <Titulo>Já sabe por onde começar?</Titulo>
@@ -40,6 +56,13 @@ function Pesquisa() {
                     setLivrosPesquisados(resultadoPesquisa)
                 }}
             />
+            {livrosPesquisados.map(livro => (
+                <Resultado>
+                    <p>Nome da Obra: {livro.nome}</p>
+                    <img src={livro.src}></img>
+                    <p>Autor: {livro.autor}</p>
+                </Resultado>
+            ))}
         </PesquisaContainer>
     )
 }
