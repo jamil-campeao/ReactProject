@@ -9,7 +9,7 @@ function Logo() {
             
             >
             </img>
-            <p><strong>Alura Books</strong></p>
+            <p><strong>Helter</strong>Books</p>
         </div>
     )
 }
