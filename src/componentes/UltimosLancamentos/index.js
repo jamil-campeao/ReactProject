@@ -1,5 +1,6 @@
 import {livros} from './dadosUltimosLancamentos';
 import styled from 'styled-components';
+import { Titulo } from '../Titulo';
 
 const UltimosLancamentosContainer = styled.section`
     background-color: #EBECEE;
@@ -7,17 +8,6 @@ const UltimosLancamentosContainer = styled.section`
     display: flex;
     flex-direction: column;
 `
-
-const Titulo = styled.h2`
-    width: 100%;
-    padding: 30px;
-    background-color: #FFF;
-    color: #EB9B00;
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-`
-
 const NovosLivrosContainer = styled.div`
     margin-top: 0px;
     display: flex;
@@ -33,7 +23,8 @@ const NovosLivrosContainer = styled.div`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-        <Titulo>ÚLTIMOS LANCAMENTOS</Titulo>
+        <Titulo cor='#EB9B00' tamanhoFonte='22px'>
+            ÚLTIMOS LANÇAMENTOS</Titulo>
         <NovosLivrosContainer>
                 {livros.map(livro => (
                     <img src={livro.src}></img>
