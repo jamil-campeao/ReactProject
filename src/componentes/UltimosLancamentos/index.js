@@ -1,6 +1,8 @@
 import {livros} from './dadosUltimosLancamentos';
 import styled from 'styled-components';
 import { Titulo } from '../Titulo';
+import imgLivro from '../../imagens/revolucaoDosBichos.jpg';
+import CardRecomenda from '../CardRecomenda';
 
 const UltimosLancamentosContainer = styled.section`
     background-color: #EBECEE;
@@ -24,12 +26,19 @@ function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
         <Titulo cor='#EB9B00' tamanhoFonte='22px'>
-            ÚLTIMOS LANÇAMENTOS</Titulo>
+            ÚLTIMOS LANÇAMENTOS
+        </Titulo>
         <NovosLivrosContainer>
                 {livros.map(livro => (
                     <img src={livro.src}></img>
                 ))}
             </NovosLivrosContainer>
+            <CardRecomenda
+                titulo='A revolução dos bichos'
+                subtitulo='Um conto de fadas'
+                descricao='Verdadeiro clássico moderno, concebido por um dos mais influentes escritores do século XX.'
+                img={imgLivro}
+            />
         </UltimosLancamentosContainer>
     )
 }
