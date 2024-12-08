@@ -44,17 +44,18 @@ const Resultado = styled.div`
 
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([])
+    function fazPesquisa(evento) {
+        const textoDigitado = evento.target.value
+        const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
+        setLivrosPesquisados(resultadoPesquisa)
+    }
     return (
         <PesquisaContainer>
             <Titulo>Já sabe por onde começar?</Titulo>
             <SubTitulo>Encontre seu livro em nossa estante.</SubTitulo>
             <Input
                 placeholder="Escreva sua próxima leitura"
-                onBlur={evento => {
-                    const textoDigitado = evento.target.value
-                    const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
-                    setLivrosPesquisados(resultadoPesquisa)
-                }}
+                onBlur={evento => fazPesquisa(evento)}
             />
             {livrosPesquisados.map(livro => (
                 <Resultado>
