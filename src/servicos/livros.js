@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const livrosAPI = axios.create({baseURL: 'http://localhost:8000/livros'});
+const livrosAPI = axios.create({baseURL: 'https://helterbooksserver.netlify.app/.netlify/functions/livros'});
 
 async function getLivros() {
     const response = await livrosAPI.get('/');

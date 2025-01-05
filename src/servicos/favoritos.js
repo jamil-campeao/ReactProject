@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const favoritosAPI = axios.create({baseURL: 'http://localhost:8000/favoritos'});
+const favoritosAPI = axios.create({baseURL: 'https://helterbooksserver.netlify.app/.netlify/functions/favoritos'});
 
 async function getLivrosFavoritos() {
     const response = await favoritosAPI.get();

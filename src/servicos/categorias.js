@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const categoriasAPI = axios.create({baseURL: 'http://localhost:8000/categorias'});
+const categoriasAPI = axios.create({baseURL: 'https://helterbooksserver.netlify.app/.netlify/functions/categorias'});
 
 async function getCategorias() {
     const response = await categoriasAPI.get();
