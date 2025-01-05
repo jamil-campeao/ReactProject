@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const textOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE', 'SOBRE']
+const textOpcoes = ['CATEGORIAS', 'FAVORITOS', 'SOBRE']
 
 const OpcoesContainer = styled.ul`
     display: flex;
